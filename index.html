@@ -29,6 +29,16 @@ img, canvas {
 width: 100%;
 height: auto;
 }
+#avatar,
+#frame {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%; /* The width will be 100% of the .image-container */
+height: 100%; /* The height will be 100% of the .image-container */
+object-fit: cover; /* Ensures the images maintain their aspect ratio while filling the container */
+}
+  
 @media (max-width: 700px) {
 main {
 margin: 0 auto;
@@ -45,8 +55,8 @@ width: auto;
 <p>Frame: <input type='file' accept="image/*" onchange="loadTemplate(event)"></p>
 
 <p>
-<img id="avatar" src="base.png" hidden="true"/>
-<img id="frame" src="overlay.png" hidden="true"/>
+<img id="avatar" src="base.png"/>
+<img id="frame" src="overlay.png"/>
 </p>
 <p><canvas id="result"></canvas></p>
 <p>
