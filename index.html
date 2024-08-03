@@ -92,12 +92,12 @@ width: auto;
 <div class="controls">
 <input type="range" min="0" max="100" value="50" class="slider" id="slider">
 <label>
-<input type="file" id="base-image-input" accept="image/*" class="hidden">
-<button id="base-image-button">Upload Foto</button>
+<input type="file" id="base-image" accept="image/*" class="hidden">
+<button id="base">Upload Foto</button>
 </label>
 <label>
-<input type="file" id="overlay-image-input" accept="image/*" class="hidden">
-<button id="overlay-image-button">Upload Frame</button>
+<input type="file" id="overlay-image" accept="image/*" class="hidden">
+<button id="overlay">Upload Frame</button>
 </label>
 </div>
 </div>
@@ -105,12 +105,12 @@ width: auto;
 </main>
 <script>
 const slider = document.getElementById('slider');
-const baseImageInput = document.getElementById('base-image-input');
-const overlayImageInput = document.getElementById('overlay-image-input');
+const baseImageInput = document.getElementById('base-image');
+const overlayImageInput = document.getElementById('overlay-image');
 const baseImage = document.querySelector('.base-image');
 const overlayImage = document.querySelector('.overlay-image');
-const baseImageButton = document.getElementById('base-image-button');
-const overlayImageButton = document.getElementById('overlay-image-button');
+const baseImageButton = document.getElementById('base');
+const overlayImageButton = document.getElementById('overlay');
 
 function loadImage(input, imgElement) {
 if (input.files && input.files[0]) {
