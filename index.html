@@ -57,7 +57,6 @@ width: auto;
 }
 }
 </style>    
-<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -108,12 +107,6 @@ canvas.height = 1080;
 context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
 context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 }
-
-$('#save').click(function (){
-var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-window.location.href=image; // it will save locally
-});
-});
 </script>
 </body>
 </html>
