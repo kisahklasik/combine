@@ -41,5 +41,46 @@ width: auto;
 domain in literature without prior coordination or asking for permission.</p>
 <p><a href="https://www.iana.org/domains/example">More information...</a></p>
 </main>
+<script>
+const slider = document.getElementById('slider');
+const baseImageInput = document.getElementById('base-image-input');
+const overlayImageInput = document.getElementById('overlay-image-input');
+const baseImage = document.querySelector('.base-image');
+const overlayImage = document.querySelector('.overlay-image');
+const baseImageButton = document.getElementById('base-image-button');
+const overlayImageButton = document.getElementById('overlay-image-button');
+
+function loadImage(input, imgElement) {
+if (input.files && input.files[0]) {
+const reader = new FileReader();
+reader.onload = (e) => {
+imgElement.src = e.target.result;
+};
+reader.readAsDataURL(input.files[0]);
+}
+}
+
+slider.addEventListener('input', () => {
+let opacity = slider.value / 100;
+overlayImage.style.opacity = opacity;
+});
+
+baseImageInput.addEventListener('change', () => {
+loadImage(baseImageInput, baseImage);
+});
+
+overlayImageInput.addEventListener('change', () => {
+loadImage(overlayImageInput, overlayImage);
+});
+
+baseImageButton.addEventListener('click', () => {
+baseImageInput.click();
+});
+
+overlayImageButton.addEventListener('click', () => {
+overlayImageInput.click();
+});
+
+</script>
 </body>
 </html>
