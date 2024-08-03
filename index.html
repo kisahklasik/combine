@@ -29,14 +29,12 @@ img, canvas {
 width: 100%;
 height: auto;
 }
-.av,
-.fra {
-position: absolute;
-top: 0;
-left: 0;
-width: 300px; /* The width will be 100% of the .image-container */
-height: 300px; /* The height will be 100% of the .image-container */
-object-fit: cover; /* Ensures the images maintain their aspect ratio while filling the container */
+img {
+width: 90vw;
+height: 75vh;
+border: 3px solid tomato;
+object-fit: cover;
+object-position: 0 0;
 }
   
 @media (max-width: 700px) {
