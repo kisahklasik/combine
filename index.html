@@ -29,9 +29,9 @@ img, canvas {
 width: 100%;
 height: auto;
 }
-#avatar,
-#frame {
-position: relative;
+.av,
+.fra {
+position: absolute;
 top: 0;
 left: 0;
 width: 100%; /* The width will be 100% of the .image-container */
@@ -56,8 +56,8 @@ width: auto;
 
 <p>
 <div class="">
-<img id="avatar" src="base.png"/>
-<img id="frame" src="overlay.png"/>
+<img id="avatar" src="base.png" class="av"/>
+<img id="frame" src="overlay.png" class="fra"/>
 </div>
 </p>
 <p><canvas id="result"></canvas></p>
