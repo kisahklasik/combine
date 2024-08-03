@@ -86,8 +86,8 @@ width: auto;
 
 <div class="main-container">
 <div class="image-container">
-<img src="base.png" alt="Avatar" class="base-image">
-<img src="overlay.png" alt="Frame" class="overlay-image">
+<img src="base.png" alt="Avatar" id="avatar">
+<img src="overlay.png" alt="Frame" id="frame">
 <canvas id="cvs" style="display: none"></canvas>
 </div>
 <div class="controls">
@@ -109,8 +109,8 @@ width: auto;
 const slider = document.getElementById('slider');
 const baseImageInput = document.getElementById('base-image');
 const overlayImageInput = document.getElementById('overlay-image');
-const baseImage = document.querySelector('.base-image');
-const overlayImage = document.querySelector('.overlay-image');
+const baseImage = document.getElementById('avatar');
+const overlayImage = document.getElementById('frame');
 const baseImageButton = document.getElementById('base');
 const overlayImageButton = document.getElementById('overlay');
 const canvas = document.getElementById('cvs');
