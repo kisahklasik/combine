@@ -107,6 +107,15 @@ canvas.height = 1080;
 context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
 context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 }
+
+$('#save').bind("click",function() { 
+var imgVal = $('#avatar').val(); 
+if(imgVal=='') { 
+alert("empty input file"); 
+} else {
+alert('file fill in');
+}
+}); 
 </script>
 </body>
 </html>
