@@ -42,7 +42,7 @@ width: 100%;
 height: 100%;
 }
 
-.av, .fra {
+.av, .fra, .c {
 position: absolute;
 top: 0;
 left: 0;
@@ -70,10 +70,11 @@ width: auto;
 <div class="col">
 <img id="avatar" src="base.png" class="av"/>
 <img id="frame" src="overlay.png" class="fra"/>
+<canvas id="result" class="c"></canvas>
 </div>
 </div>
 </p>
-<p><canvas id="result"></canvas></p>
+<!--<p><canvas id="result"></canvas></p>-->
 <p>
 <button onclick="gen()">CLICK HERE</button>
 </p>
