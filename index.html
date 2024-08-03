@@ -45,12 +45,12 @@ width: auto;
 <p>Frame: <input type='file' accept="image/*" onchange="loadTemplate(event)"></p>
 
 <p>
-<img id="avatar" src="base.png"/>
-<img id="frame" src="overlay.png"/>
+<img id="avatar" src="base.png" hidden="true"/>
+<img id="frame" src="overlay.png" hidden="true"/>
 </p>
 <p><canvas id="result"></canvas></p>
 <p>
-<button id="btn" onclick="gen()">CLICK HERE</button>
+<button onclick="gen()">CLICK HERE</button>
 </p>
 </main>
 <script>
@@ -77,14 +77,11 @@ let canvas = document.getElementById("result");
 var context = canvas.getContext("2d");
 let BtnEle = document.getElementById("btn");
 
-BtnEle.addEventListener("click", () => {
-
 canvas.width = 1080;
 canvas.height = 1080;
 context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
 context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 }
-});
 </script>
 </body>
 </html>
