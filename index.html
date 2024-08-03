@@ -76,8 +76,10 @@ width: auto;
 <p><canvas id="result" class="c"></canvas></p>
 <p>
 <button onclick="gen()">CLICK HERE</button>
+<button id="save"></button>
 </p>
 </main>
+<script></script>
 <script>
 var loadFile = function(event) {
 var output = document.getElementById('avatar');
@@ -106,6 +108,12 @@ canvas.height = 1080;
 context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
 context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 }
+
+$('#save').click(function (){
+var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+window.location.href=image; // it will save locally
+});
+});
 </script>
 </body>
 </html>
