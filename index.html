@@ -82,9 +82,27 @@ width: auto;
 <body>
 <main>
 <h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this
-domain in literature without prior coordination or asking for permission.</p>
-<p><a href="https://www.iana.org/domains/example">More information...</a></p>
+
+<div class="main-container">
+<div class="image-container">
+<img src="" alt="Image 1" class="base-image">
+<img src="" alt="Image 2" class="overlay-image">
+</div>
+<div class="controls">
+<input type="range" min="0" max="100" value="0" class="slider" id="slider">
+<label>
+Choose base image:
+<input type="file" id="base-image-input" accept="image/*" class="hidden">
+<button id="base-image-button">Upload Base Image</button>
+</label>
+<label>
+Choose overlay image:
+<input type="file" id="overlay-image-input" accept="image/*" class="hidden">
+<button id="overlay-image-button">Upload Overlay Image</button>
+</label>
+</div>
+</div>
+
 </main>
 <script>
 const slider = document.getElementById('slider');
