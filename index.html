@@ -78,7 +78,6 @@ width: auto;
 }
 }
 </style>    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 
 <body>
@@ -89,7 +88,7 @@ width: auto;
 <div class="image-container">
 <img src="base.png" alt="Avatar" class="base-image">
 <img src="overlay.png" alt="Frame" class="overlay-image">
-<canvas id="cvs" style="width: 300px; height: 300px; display: none"></canvas>
+<canvas id="cvs" style="display: none"></canvas>
 </div>
 <div class="controls">
 <input type="range" min="0" max="100" value="50" class="slider" id="slider">
@@ -154,7 +153,7 @@ overlayImageInput.click();
 });
 
 function saveToPng() {
-const canvas = document.getElementById('overlay-img');
+const canvas = document.getElementById('cvs');
 canvas.toBlob((blob) => {
 const link = document.createElement("a");
 link.href = URL.createObjectURL(blob);
