@@ -31,7 +31,7 @@ height: auto;
 }  
 .row {
 position: relative;
-padding: 30% 0;
+/*padding: 30% 0;*/
 }
 
 .col {
@@ -43,11 +43,11 @@ height: 100%;
 }
 
 .av, .fra {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
 }
 @media (max-width: 700px) {
 main {
@@ -65,8 +65,12 @@ width: auto;
 <p>Frame: <input type='file' accept="image/*" onchange="loadTemplate(event)"></p>
 
 <p>
+<div class="row">
+<div class="col">
 <img id="avatar" src="base.png" class="av"/>
 <img id="frame" src="overlay.png" class="fra"/>
+</div>
+</div>
 </p>
 <p><canvas id="result"></canvas></p>
 <p>
