@@ -51,7 +51,22 @@ width: auto;
 </p>
 </main>
 <script>
-<script>
+var loadFile = function(event) {
+var output = document.getElementById('avatar');
+output.src = URL.createObjectURL(event.target.files[0]);
+output.onload = function() {
+URL.revokeObjectURL(output.src)
+}
+};
+
+var loadTemplate = function(event) {
+var output = document.getElementById('frame');
+output.src = URL.createObjectURL(event.target.files[0]);
+output.onload = function() {
+URL.revokeObjectURL(output.src)
+}
+};
+  
 let imgEle1 = document.querySelectorAll(".image")[0];
 let imgEle2 = document.querySelectorAll(".image")[1];
 let resEle = document.querySelector(".result");
