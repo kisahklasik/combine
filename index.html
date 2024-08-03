@@ -28,15 +28,7 @@ text-decoration: none;
 img, canvas {
 width: 100%;
 height: auto;
-}
-img {
-width: 90vw;
-height: 75vh;
-border: 3px solid tomato;
-object-fit: cover;
-object-position: 0 0;
-}
-  
+}  
 @media (max-width: 700px) {
 main {
 margin: 0 auto;
@@ -53,10 +45,8 @@ width: auto;
 <p>Frame: <input type='file' accept="image/*" onchange="loadTemplate(event)"></p>
 
 <p>
-<div class="">
 <img id="avatar" src="base.png" class="av"/>
 <img id="frame" src="overlay.png" class="fra"/>
-</div>
 </p>
 <p><canvas id="result"></canvas></p>
 <p>
