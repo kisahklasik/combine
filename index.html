@@ -29,16 +29,9 @@ img, canvas {
 width: 100%;
 height: auto;
 }
-.box {
-position: relative;
-display: inline-block;
-width: 100%; /* Set the desired width for both images */
-height: 300px; /* Set the desired height for both images */
-overflow: hidden;
-}
 #avatar,
 #frame {
-position: absolute;
+position: relative;
 top: 0;
 left: 0;
 width: 100%; /* The width will be 100% of the .image-container */
@@ -62,7 +55,7 @@ width: auto;
 <p>Frame: <input type='file' accept="image/*" onchange="loadTemplate(event)"></p>
 
 <p>
-<div class="box">
+<div class="">
 <img id="avatar" src="base.png"/>
 <img id="frame" src="overlay.png"/>
 </div>
