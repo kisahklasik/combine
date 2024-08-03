@@ -37,26 +37,20 @@ width: auto;
 <body>
 <main>
 <h1>Example Domain</h1>
-
-<div class="main-container">
-<div class="image-container">
-<img src="base.png" alt="Avatar" class="base-image">
-<img src="overlay.png" alt="Frame" class="overlay-image">
-<canvas id="cvs"></canvas>
-</div>
-<div class="controls">
-<input type="range" min="0" max="100" value="50" class="slider" id="slider">
-<label>
-<input type="file" id="base-image" accept="image/*" class="hidden">
-<button id="base">Upload Foto</button>
-</label>
-<label>
-<input type="file" id="overlay-image" accept="image/*" class="hidden">
-<button id="overlay">Upload Frame</button>
-</label>
-<button onclick="saveToPng()">Save</button>
-</div>
-</div>
+<img
+class="image"
+src="https://i.picsum.photos/id/845/250/250.jpg?hmac=2l7QArh4UKul2qF-JvTjaBu3-
+WF2KpKBgpBALmFoxWY"
+/>
+<img
+class="image"
+src="https://i.picsum.photos/id/925/250/250.jpg?hmac=twWJdaKT46cPk1aNvB7aKdiLZoQ
+zvzu5VW85OEUO4ys"
+/>
+<canvas class="result"></canvas>
+<br />
+<button class="Btn">CLICK HERE</button>
+<h3>Click on the above button to combine the two images above together</h3>
 
 </main>
 <script>
