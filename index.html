@@ -99,6 +99,7 @@ width: auto;
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
+// upload base.png
 var loadFile = function(event) {
 var output = document.getElementById('avatar');
 output.src = URL.createObjectURL(event.target.files[0]);
@@ -107,6 +108,7 @@ URL.revokeObjectURL(output.src)
 }
 };
 
+// upload overlay.png
 var loadTemplate = function(event) {
 var output = document.getElementById('frame');
 output.src = URL.createObjectURL(event.target.files[0]);
@@ -115,6 +117,7 @@ URL.revokeObjectURL(output.src)
 }
 };
 
+// combine image
 function gen() {
 let imgEle1 = document.getElementById("avatar");
 let imgEle2 = document.getElementById("frame");
@@ -126,7 +129,8 @@ canvas.height = 1024;
 context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
 context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 }
-    
+
+// Download
 function dlPNG() {
 const canvas = document.getElementById('result');
 canvas.toBlob((blob) => {
