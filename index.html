@@ -147,10 +147,6 @@ x1 = img.width / 2 - size / 2;
 //hoch
 y1 = img.height / 2 - size / 2;
 }
-context.drawImage(img, x1, y1, size, size, 0, 0, 500, 500);
-for (var optionImage of document.querySelectorAll('.frame-option img')) {
-optionImage.style.backgroundImage = `url("${img.src}")`;
-}
 
 if (typeof callback === 'function') callback();
 });
