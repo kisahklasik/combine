@@ -124,37 +124,11 @@ let overlayIMG = document.getElementById("frame");
 let canvas = document.getElementById("result");
 let context = canvas.getContext("2d");
 
-// canvas.width = 1024;
-// canvas.height = 1024;
-// context.drawImage(baseIMG, 0, 0, canvas.width, canvas.height);
-// context.drawImage(overlayIMG, 0, 0, canvas.width, canvas.height);
-// }
-
-useEffect(() => {
-if (src) {
-let canvas = canvasRef.current
-let context = canvas.getContext("2d");
-let imageObj = new Image()
-imageObj.onload = () => {
-if (canvas) {
-let hRatio = canvas.width / imageObj.width
-let vRatio = canvas.height / imageObj.height
-// Calculate ratio so the image is filled inside canvas
-let ratio = Math.max(hRatio, vRatio)
-context?.clearRect(0, 0, canvas.width, canvas.height)
-context?.drawImage(
-imageObj,
-x,
-y,
-// for zooming scale is between 0 and 2
-imageObj.width * ratio * scale,
-imageObj.height * ratio * scale
-)
+canvas.width = 1024;
+canvas.height = 1024;
+context.drawImage(baseIMG, 0, 0, canvas.width, canvas.height);
+context.drawImage(overlayIMG, 0, 0, canvas.width, canvas.height);
 }
-}
-imageObj.src = src
-}
-}, [src, x, y, scale])
 
 // Download
 function dlPNG() {
