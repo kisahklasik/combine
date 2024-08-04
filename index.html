@@ -97,7 +97,6 @@ width: auto;
 <button onclick="dlPNG()">DOWNLOAD</button>
 </p>
 </main>
-<script src="https://unpkg.com/@agilie/canvas-image-cover-position"></script>
 <script>
 var loadFile = function(event) {
 var output = document.getElementById('avatar');
@@ -127,12 +126,33 @@ let context = canvas.getContext("2d");
 // context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 // }
 
-imagePosition;
-imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas2.width, canvas2.height);
+var MAX_WIDTH = 1024;
+var MAX_HEIGHT = 1024;
 
-context.drawImage(imgEle2, 0, 0, image.naturalWidth, image.naturalHeight);
-context.drawImage(imgEle1, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+var width = img.width;
+var height = img.height;
 
+// Change the resizing logic
+if (width > height) {
+if (width > MAX_WIDTH) {
+height = height * (MAX_WIDTH / width);
+width = MAX_WIDTH;
+}
+} else {
+if (height > MAX_HEIGHT) {
+width = width * (MAX_HEIGHT / height);
+height = MAX_HEIGHT;
+}
+}
+
+canvas.width = width;
+canvas.height = height;
+ctx.drawImage(img, 0, 0, width, height);
+
+var canvas = document.createElement("canvas");
+canvas.width = width;
+canvas.height = height;
+context.drawImage(img, 0, 0, width, height);
   
 function dlPNG() {
 const canvas = document.getElementById('result');
