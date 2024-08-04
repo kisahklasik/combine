@@ -132,17 +132,17 @@ let context = canvas.getContext("2d");
 
 useEffect(() => {
 if (src) {
-const canvas = canvasRef.current
-const canvasContext = canvas?.getContext('2d')
-const imageObj = new Image()
+let canvas = canvasRef.current
+let context = canvas.getContext("2d");
+let imageObj = new Image()
 imageObj.onload = () => {
 if (canvas) {
-const hRatio = canvas.width / imageObj.width
-const vRatio = canvas.height / imageObj.height
+let hRatio = canvas.width / imageObj.width
+let vRatio = canvas.height / imageObj.height
 // Calculate ratio so the image is filled inside canvas
-const ratio = Math.max(hRatio, vRatio)
-canvasContext?.clearRect(0, 0, canvas.width, canvas.height)
-canvasContext?.drawImage(
+let ratio = Math.max(hRatio, vRatio)
+context?.clearRect(0, 0, canvas.width, canvas.height)
+context?.drawImage(
 imageObj,
 x,
 y,
