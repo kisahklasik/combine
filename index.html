@@ -128,6 +128,10 @@ let context = canvas.getContext("2d");
 // }
 
 imagePosition;
+imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas2.width, canvas2.height);
+
+context.drawImage(imgEle2, 0, 0, image.naturalWidth, image.naturalHeight);
+context.drawImage(imgEle1, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 
   
 function dlPNG() {
