@@ -120,21 +120,12 @@ let imgEle2 = document.getElementById("frame");
 let canvas = document.getElementById("result");
 let context = canvas.getContext("2d");
 
-// canvas.width = 1080;
-// canvas.height = 1080;
-// context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
-// context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
-// }
+canvas.width = 1080;
+canvas.height = 1080;
+context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
+context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
+}
 
-input.addEventListener('change', drawImageFromInput);
-
-function drawImageFromInput(callback) {
-context.clearRect(0, 0, 500, 500);
-
-if (input.files.length === 0) {
-context.drawImage(ph, 0, 0, 500, 500);
-if (typeof callback === 'function') callback();
-} else {
 const img = new Image();
 img.addEventListener('load', function () {
 size = Math.min(img.height, img.width);
@@ -147,13 +138,6 @@ x1 = img.width / 2 - size / 2;
 //hoch
 y1 = img.height / 2 - size / 2;
 }
-
-if (typeof callback === 'function') callback();
-});
-img.src = URL.createObjectURL(input.files[0]);
-}
-}
-
 
 function dlPNG() {
 const canvas = document.getElementById('result');
