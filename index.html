@@ -129,12 +129,14 @@ var baseIMG = document.getElementById("avatar"),
     overlayIMG = document.getElementById("frame"),
     canvas = document.getElementById("result"),
     context = canvas.getContext("2d");
+    image = document.getElementById('image'),
+    imagePosition;
 
-canvas.width = 1024;
-canvas.height = 1024;
-context.drawImage(baseIMG, 0, 0, canvas.width, canvas.height);
-context.drawImage(overlayIMG, 0, 0, canvas.width, canvas.height);
-}
+// canvas.width = 1024;
+// canvas.height = 1024;
+// context.drawImage(baseIMG, 0, 0, canvas.width, canvas.height);
+// context.drawImage(overlayIMG, 0, 0, canvas.width, canvas.height);
+/ }
 
 // Download
 function dlPNG() {
