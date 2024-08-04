@@ -131,8 +131,8 @@ canvas.height = h;
 
 // Draw the image
 let containerRatio = h / w;
-let width = img.naturalWidth;
-let height = img.naturalHeight;
+let width = imgEle1.naturalWidth;
+let height = imgEle1.naturalHeight;
 let imgRatio = height / width;
 
 if (imgRatio > containerRatio) { // image's height too big
@@ -144,10 +144,10 @@ width = height / containerRatio;
 let s = {
 width: width,
 height: height,
-offsetX: (img.naturalWidth - width) * .5,
-offsetY: (img.naturalHeight - height) * .5
+offsetX: (imgEle1.naturalWidth - width) * .5,
+offsetY: (imgEle1.naturalHeight - height) * .5
 };
-context.drawImage(img, s.offsetX, s.offsetY, s.width, s.height, 0, 0, w, h);
+context.drawImage(imgEle1, s.offsetX, s.offsetY, s.width, s.height, 0, 0, w, h);
 return canvas;
 }
   
