@@ -97,6 +97,7 @@ width: auto;
 <button onclick="dlPNG()">DOWNLOAD</button>
 </p>
 </main>
+<script src="https://unpkg.com/@agilie/canvas-image-cover-position"></script>
 <script>
 var loadFile = function(event) {
 var output = document.getElementById('avatar');
@@ -126,32 +127,8 @@ let context = canvas.getContext("2d");
 // context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 // }
 
-canvas.width = w;
-canvas.height = h;
+imagePosition;
 
-// Draw the image
-let containerRatio = h / w;
-let width = canvas.naturalWidth;
-let height = canvas.naturalHeight;
-let imgRatio = height / width;
-
-if (imgRatio > containerRatio) { // image's height too big
-height = width * containerRatio;
-} else { // image's width too big
-width = height / containerRatio;
-}
-
-let s = {
-width: width,
-height: height,
-offsetX: (canvas.naturalWidth - width) * .5,
-offsetY: (canvas.naturalHeight - height) * .5
-};
-context.drawImage(imgEle1, s.offsetX, s.offsetY, s.width, s.height, 0, 0, w, h);
-context.drawImage(imgEle2, s.offsetX, s.offsetY, s.width, s.height, 0, 0, w, h);
-
-return canvas;
-}
   
 function dlPNG() {
 const canvas = document.getElementById('result');
