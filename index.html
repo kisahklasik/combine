@@ -158,7 +158,6 @@ img.src = URL.createObjectURL(input.files[0]);
 }
 }
 
-placeholder.onload = drawImageFromInput;
 
 function dlPNG() {
 const canvas = document.getElementById('result');
@@ -169,6 +168,8 @@ link.download = "avatar.png";
 link.click();
 })
 };
+
+placeholder.onload = drawImageFromInput;
 </script>
 </body>
 </html>
