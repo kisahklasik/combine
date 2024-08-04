@@ -126,19 +126,6 @@ context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
 context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 }
 
-const img = new Image();
-img.addEventListener('load', function () {
-size = Math.min(img.height, img.width);
-x1 = 0;
-y1 = 0;
-if (img.height < img.width) {
-//breit
-x1 = img.width / 2 - size / 2;
-} else if (img.height > img.width) {
-//hoch
-y1 = img.height / 2 - size / 2;
-}
-
 function dlPNG() {
 const canvas = document.getElementById('result');
 canvas.toBlob((blob) => {
@@ -148,8 +135,6 @@ link.download = "avatar.png";
 link.click();
 })
 };
-
-placeholder.onload = drawImageFromInput;
 </script>
 </body>
 </html>
