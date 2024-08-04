@@ -119,15 +119,15 @@ URL.revokeObjectURL(output.src)
 
 // combine image
 function gen() {
-let imgEle1 = document.getElementById("avatar");
-let imgEle2 = document.getElementById("frame");
+let baseIMG = document.getElementById("avatar");
+let overlayIMG = document.getElementById("frame");
 let canvas = document.getElementById("result");
 let context = canvas.getContext("2d");
 
 canvas.width = 1024;
 canvas.height = 1024;
-context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
-context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
+context.drawImage(baseIMG, 0, 0, canvas.width, canvas.height);
+context.drawImage(overlayIMG, 0, 0, canvas.width, canvas.height);
 }
 
 // Download
