@@ -147,8 +147,9 @@ height = MAX_HEIGHT;
 
 canvas.width = width;
 canvas.height = height;
-context.drawImage(img, 0, 0, width, height);
-  
+context.drawImage(imgEle1, 0, 0, width, height);
+context.drawImage(imgEle2, 0, 0, width, height);
+    
 function dlPNG() {
 const canvas = document.getElementById('result');
 canvas.toBlob((blob) => {
