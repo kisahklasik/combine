@@ -93,7 +93,7 @@ width: auto;
 <p><canvas id="result"></canvas></p>
 <p>
 <button onclick="gen()">GENERATE</button>
-<button id="save">DOWNLOAD</button>
+<button onclick="dlPNG()">DOWNLOAD</button>
 </p>
 </main>
 <script>
@@ -125,14 +125,15 @@ context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
 context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 }
 
-$('#save').bind("click",function() { 
-var imgVal = $('#avatar').val(); 
-if(imgVal=='') { 
-alert("empty input file"); 
-} else {
-alert('file fill in');
-}
-}); 
+function dlPng() {
+const canvas = document.getElementById('result');
+canvas.toBlob((blob) => {
+const link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "avatar.png";
+link.click();
+})
+};
 </script>
 </body>
 </html>
