@@ -126,13 +126,6 @@ let context = canvas.getContext("2d");
 // context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 // }
 
-const input = document.getElementById('input-file');
-const canvas = document.getElementById('preview');
-const context = canvas.getContext('2d');
-const ph = document.getElementById('placeholder');
-const dlLink = document.getElementById('download-link');
-dlLink.hidden = false;
-
 input.addEventListener('change', drawImageFromInput);
 
 function drawImageFromInput(callback) {
