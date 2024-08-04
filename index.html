@@ -128,8 +128,7 @@ function gen() {
 var baseIMG = document.getElementById("avatar"),
     overlayIMG = document.getElementById("frame"),
     canvas = document.getElementById("result"),
-    context = canvas.getContext("2d");
-    image = document.getElementById('image'),
+//    context = canvas.getContext("2d");
     imagePosition;
 
 // canvas.width = 1024;
@@ -138,6 +137,13 @@ var baseIMG = document.getElementById("avatar"),
 // context.drawImage(overlayIMG, 0, 0, canvas.width, canvas.height);
 / }
 
+
+bImage.style.backgroundImage = 'url(' + image.src + ')';
+imagePosition = canvasImageCoverPosition(baseIMG.naturalWidth, baseIMG.naturalHeight , canvas2.width, canvas2.height);
+
+// canvas1.getContext('2d').drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight);
+canvas.getContext('2d').drawImage(baseIMG, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+    
 // Download
 function dlPNG() {
 const canvas = document.getElementById('result');
