@@ -120,12 +120,17 @@ URL.revokeObjectURL(output.src)
 
 // combine image
 function gen() {
-let baseIMG = document.getElementById("avatar");
-let overlayIMG = document.getElementById("frame");
-let canvas = document.getElementById("result");
-let context = canvas.getContext("2d");
+// let baseIMG = document.getElementById("avatar");
+// let overlayIMG = document.getElementById("frame");
+// let canvas = document.getElementById("result");
+// let context = canvas.getContext("2d");
+              
+let baseIMG = document.getElementById("avatar"),
+    overlayIMG = document.getElementById("frame"),
+    canvas = document.getElementById("result"),
+//    context = canvas.getContext("2d");
               imagePosition;
-
+  
 // canvas.width = 1024;
 // canvas.height = 1024;
 // context.drawImage(baseIMG, 0, 0, canvas.width, canvas.height);
@@ -134,8 +139,8 @@ let context = canvas.getContext("2d");
 
 
 bImage.style.backgroundImage = 'url(' + image.src + ')';
-imagePosition = canvasImageCoverPosition(baseIMG.naturalWidth, baseIMG.naturalHeight , canvas2.width, canvas2.height);
-context.drawImage(baseIMG, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+imagePosition = canvasImageCoverPosition(baseIMG.naturalWidth, baseIMG.naturalHeight , canvas.width, canvas.height);
+canvas.getContext('2d').drawImage(baseIMG, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
     
 // Download
 function dlPNG() {
